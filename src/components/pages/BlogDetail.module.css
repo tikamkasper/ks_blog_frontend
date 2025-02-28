@@ -1,0 +1,9 @@
+.blogDetailContainer {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+.blogDetailContent {
+  line-height: 1.6;
+  font-size: 18px;
+}

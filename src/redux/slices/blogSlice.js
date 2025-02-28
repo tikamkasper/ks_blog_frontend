@@ -1,39 +1,31 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import API from "../api/axios";
+import { createSlice } from "@reduxjs/toolkit";
+import { LOADING } from "../constants.js";
+import { fetchVerifiedBlogs } from "../thunks/blogThunks.js";
 
-// Fetch Blogs
-export const fetchBlogs = createAsyncThunk(
-  "blogs/fetchBlogs",
-  async (_, thunkAPI) => {
-    try {
-      const response = await API.get("/blogs");
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data);
-    }
-  }
-);
-
-// Slice
-const blogSlice = createSlice({
-  name: "blogs",
-  initialState: { blogs: [], loading: false, error: null },
+const initialState = {
+  loading: LOADING.IDLE,
+  blogs: null,
+  error: null,
+};
+const verifiedBlogsSlice = createSlice({
+  name: "verifiedBlogs",
+  initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchBlogs.pending, (state) => {
-        state.loading = true;
+      .addCase(fetchVerifiedBlogs.pending, (state) => {
+        state.loading = LOADING.PENDING;
         state.error = null;
       })
-      .addCase(fetchBlogs.fulfilled, (state, action) => {
-        state.loading = false;
+      .addCase(fetchVerifiedBlogs.fulfilled, (state, action) => {
+        state.loading = LOADING.SUCCEEDED;
         state.blogs = action.payload;
       })
-      .addCase(fetchBlogs.rejected, (state, action) => {
-        state.loading = false;
+      .addCase(fetchVerifiedBlogs.rejected, (state, action) => {
+        state.loading = LOADING.FAILED;
         state.error = action.payload;
       });
   },
 });
 
-export default blogSlice.reducer;
+export const verifiedBlogReducer = verifiedBlogsSlice.reducer;

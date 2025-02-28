@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import { FaHome, FaUser, FaCog } from "react-icons/fa";
 import styles from "./AdminDashboard.module.css";
 
@@ -21,19 +21,19 @@ const AdminDashboard = () => {
         </button>
         <ul>
           <li>
-            <Link to="/admin-dashboard">
+            <NavLink to="/admin-dashboard">
               <FaHome /> {isExpanded && "Dashboard"}
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/admin-users">
+            <NavLink to="/admin-users">
               <FaUser /> {isExpanded && "Users"}
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/admin-settings">
+            <NavLink to="/admin-settings">
               <FaCog /> {isExpanded && "Settings"}
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>

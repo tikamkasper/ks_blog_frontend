@@ -1,0 +1,17 @@
+.commentSectionContainer {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+.commentSectionList {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+.commentSectionItem {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}

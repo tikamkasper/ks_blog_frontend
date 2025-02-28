@@ -8,11 +8,11 @@ import Logo from "../../assets/kasper_logo.png";
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.auth);
+  const { isAuthenticated, user } = useSelector((state) => state.auth);
 
-  const handleLogout = () => {
-    dispatch(logoutUser());
-    navigate("/");
+  const handleLogout = async () => {
+    await dispatch(logoutUser()).unwrap();
+    navigate("/", { replace: true });
   };
 
   return (
@@ -22,8 +22,8 @@ const Header = () => {
           <img src={Logo} alt="kasper_logo" width="150px" height="50px" />
         </div>
         <div className={styles.login_logout}>
-          {!user ? (
-            <Link to="/login">Login</Link>
+          {!isAuthenticated ? (
+            <Link to="/login">Login</Link> // ✅ Corrected login navigation
           ) : (
             <Link to="#" onClick={handleLogout}>
               Logout

@@ -9,7 +9,7 @@ import Home from "./components/pages/Home.jsx";
 import Footer from "./components/layout/Footer.jsx";
 import Login from "./components/pages/auth/Login.jsx";
 import AdminDashboard from "./components/pages/admin/AdminDashboard.jsx";
-import UserDashboard from "./components/pages/user/UserDashboard.jsx";
+import UserDashboardLayout from "./components/pages/user/UserDashboard.jsx";
 import { getUser } from "./redux/thunks/authThunks.js";
 
 const App = () => {
@@ -26,7 +26,7 @@ const App = () => {
     <Router>
       <ToastContainer position="top-right" autoClose={3000} />
       <Header />
-      <div className="app-container">
+      <main className="app-container">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -34,10 +34,10 @@ const App = () => {
             <Route path="/dashboard/admin" element={<AdminDashboard />} />
           )}
           {isAuthenticated && user?.role === "user" && (
-            <Route path="/dashboard/user" element={<UserDashboard />} />
+            <Route path="/dashboard/user" element={<UserDashboardLayout />} />
           )}
         </Routes>
-      </div>
+      </main>
       <Footer />
     </Router>
   );

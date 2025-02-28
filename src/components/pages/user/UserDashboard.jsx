@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { FaHome, FaBlog, FaBars } from "react-icons/fa";
 import styles from "./UserDashboard.module.css";
 
-const UserDashboard = () => {
+const UserDashboardLayout = () => {
   const [isExpanded, setIsExpanded] = useState(true);
 
   return (
@@ -36,11 +36,13 @@ const UserDashboard = () => {
 
       {/* Dashboard Content */}
       <div className={styles.dashboardContent}>
-        <h1>Welcome to User Dashboard</h1>
-        <p>Manage your blogs and profile from here.</p>
+        <div className="">
+          <h1>Welcome to User Dashboard</h1>
+          <p>Manage your blogs and profile from here.</p>
+        </div>
       </div>
     </div>
   );
 };
 
-export default UserDashboard;
+export default UserDashboardLayout;

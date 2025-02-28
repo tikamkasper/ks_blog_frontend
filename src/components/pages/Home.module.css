@@ -1,0 +1,10 @@
+.homeContainer {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+.homeBlogList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

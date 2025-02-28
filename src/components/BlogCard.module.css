@@ -1,0 +1,16 @@
+.blogCard {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid gray;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.blogCard:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.blogCardImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+}

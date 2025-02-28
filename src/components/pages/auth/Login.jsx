@@ -16,17 +16,15 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log(" comp:", { email, password });
-      // const res = await dispatch(loginUser({ email, password })).unwrap();
-      dispatch(loginUser({ email, password }));
-      // toast.success("Login Successful.");
-      // if (res.user.role === "admin") {
-      //   navigate("/dashboard/admin");
-      // } else if (res.user.role === "user") {
-      //   navigate("/dashboard/user");
-      // } else {
-      //   navigate("/");
-      // }
+      const user = await dispatch(loginUser({ email, password })).unwrap();
+      toast.success("Login Successful.");
+      if (user.role === "admin") {
+        navigate("/dashboard/admin");
+      } else if (user.role === "user") {
+        navigate("/dashboard/user");
+      } else {
+        navigate("/");
+      }
     } catch (error) {
       toast.error(error.message || "Invalid Credentials.");
     }
