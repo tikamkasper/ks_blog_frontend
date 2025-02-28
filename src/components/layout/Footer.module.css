@@ -1,0 +1,25 @@
+/* Footer Container */
+.container {
+  width: 100%;
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  transition: background 0.3s ease-in-out;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Text (Centered) */
+.text {
+  color: #333;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px 3%;
+  }
+}

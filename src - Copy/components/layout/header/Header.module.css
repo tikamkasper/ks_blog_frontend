@@ -1,0 +1,37 @@
+.container{
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fdfbfb;
+margin: auto;
+margin-top: 20px;
+}
+.Beadcrumb{
+  padding: 4px 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #636360;
+   &:hover{
+      background-color: #363636;
+    }
+   
+}
+.innerContainer{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.login_logout > a{
+  text-decoration: none;
+  background-color: #636360;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  &:hover{
+    background-color: #242323;
+  }
+}

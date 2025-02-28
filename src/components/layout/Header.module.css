@@ -1,0 +1,66 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.subContainer {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ks_logo img {
+  cursor: pointer;
+}
+
+/* Login/Logout Button */
+.login_logout {
+  position: relative;
+}
+
+.login_logout a {
+  text-decoration: none;
+  background-color: #636360;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+  display: inline-block;
+}
+
+/* Tooltip Styling */
+.login_logout a::after {
+  content: "Are you an authorized user?";
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* background: rgba(0, 0, 0, 0.8); */
+  /* color: white; */
+color: #636360;
+  /* padding: 5px 10px; */
+  /* border-radius: 5px; */
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Show Tooltip on Hover */
+.login_logout a:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.login_logout a:hover {
+  background-color: #242323;
+}
