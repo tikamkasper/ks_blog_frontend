@@ -23,13 +23,9 @@ export const loginUser = createAsyncThunk(
 // if user is already logged in
 export const getUser = createAsyncThunk("auth/getUser", async (_, thunkAPI) => {
   try {
-    const response = await axios.get(
-      "http://localhost:8000/api/v1/users/me",
-      {},
-      {
-        withCredentials: true,
-      }
-    );
+    const response = await axios.get("http://localhost:8000/api/v1/users/me", {
+      withCredentials: true,
+    });
     return response?.data?.data?.user;
   } catch (error) {
     return thunkAPI.rejectWithValue(
@@ -43,8 +39,6 @@ export const logoutUser = createAsyncThunk(
   "auth/logoutUser",
   async (_, thunkAPI) => {
     try {
-      console.log("Sending logout request...");
-
       const response = await axios.post(
         "http://localhost:8000/api/v1/users/logout",
         {},
@@ -54,7 +48,6 @@ export const logoutUser = createAsyncThunk(
         }
       );
 
-      console.log("Logout successful:", response.data);
       return response?.data?.data?.user;
     } catch (error) {
       console.error("Logout error:", error.response?.data || error.message);

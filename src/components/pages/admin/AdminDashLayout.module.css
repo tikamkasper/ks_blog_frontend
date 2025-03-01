@@ -1,0 +1,9 @@
+.main{
+  display: flex;
+  min-height: 90vh;
+  background-color: #fff;
+}
+.content{
+  flex: 1;
+  padding: 20px;
+}

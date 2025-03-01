@@ -13,61 +13,65 @@ const SideNav = () => {
   const [isExpanded, setIsExpanded] = useState(true);
 
   return (
-    <div className={styles.dashboardContainer}>
-      {/* Sidebar Navigation */}
-      <div
-        className={`${styles.sidenav} ${
-          isExpanded ? styles.expanded : styles.collapsed
-        }`}
-      >
-        <div className="sidenavTop">
-          <button
-            type="button"
-            className={styles.toggleBtn}
-            onClick={() => setIsExpanded(!isExpanded)}
+    <div
+      className={`${styles.sidenav} ${
+        isExpanded ? styles.expanded : styles.collapsed
+      }`}
+    >
+      <div className="sidenavTop">
+        <button
+          type="button"
+          className={styles.toggleBtn}
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          {isExpanded ? <FiAlignLeft /> : <FiAlignRight />}
+        </button>
+      </div>
+
+      <ul>
+        <li>
+          <NavLink
+            to="/admin/dashboard"
+            className={({ isActive }) => (isActive ? `${styles.link_bg}` : "")}
           >
-            {isExpanded ? <FiAlignLeft /> : <FiAlignRight />}
-          </button>
-        </div>
-
-        <ul>
-          <li>
-            <NavLink to="/admin/dashboard">
-              <MdDashboardCustomize />
-              {isExpanded && "Dashboard"}
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/admin/profile">
-              <FaUser />
-              {isExpanded && "My Profile"}
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/admin/users">
-              <FaUsers /> {isExpanded && "Users"}
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/admin/blogs">
-              <FaBlog /> {isExpanded && "Blogs"}
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/admin/account">
-              <IoMdSettings /> {isExpanded && "Settings"}
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-
-      {/* Dashboard Content */}
-      <div className={styles.dashboardContent}>
-        <div className="">
-          <h1>Welcome to Admin Dashboard</h1>
-          <p>Manage your blogs and profile from here.</p>
-        </div>
-      </div>
+            <MdDashboardCustomize />
+            {isExpanded && "Dashboard"}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/admin/profile"
+            className={({ isActive }) => (isActive ? `${styles.link_bg}` : "")}
+          >
+            <FaUser />
+            {isExpanded && "My Profile"}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/admin/users"
+            className={({ isActive }) => (isActive ? `${styles.link_bg}` : "")}
+          >
+            <FaUsers /> {isExpanded && "Users"}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/admin/blogs"
+            className={({ isActive }) => (isActive ? `${styles.link_bg}` : "")}
+          >
+            <FaBlog /> {isExpanded && "Blogs"}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/admin/account"
+            className={({ isActive }) => (isActive ? `${styles.link_bg}` : "")}
+          >
+            <IoMdSettings /> {isExpanded && "Settings"}
+          </NavLink>
+        </li>
+      </ul>
     </div>
   );
 };

@@ -19,7 +19,7 @@ const Header = () => {
     <div className={styles.container}>
       <div className={styles.subContainer}>
         <div className={styles.ks_logo}>
-          <img src={Logo} alt="kasper_logo" width="150px" height="50px" />
+          <img src={Logo} alt="kasper_logo" width="100px" height="40px" />
         </div>
         <div className={styles.login_logout}>
           {!isAuthenticated ? (

@@ -1,10 +1,3 @@
-/* Main Dashboard Container */
-.dashboardContainer {
-  display: flex;
-  height: 80vh;
-  background-color: #fff;
-}
-
 /* Sidebar Styling */
 .sidenav {
   background: #f9f9f9;
@@ -45,7 +38,7 @@
 }
 
 .sidenav ul li {
-  margin:0px,15px ;
+  margin-bottom: 10px;
   &:hover{
     background: #636360;
   }
@@ -64,17 +57,11 @@
   gap: 10px;
   font-size: 16px;
 }
-
-
-/* Dashboard Content */
-.dashboardContent {
-  flex: 1;
-  padding: 20px;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
-  border : 1px solid #b31616;
+.link_bg {
+  background: #BFC9CA;
+  &:hover{
+    background: #4a4a4a;
+  }
 }
 
 /* Responsive Design */

@@ -1,0 +1,10 @@
+.main{
+  display: flex;
+  height: 80vh;
+  background-color: #fff;
+}
+.content{
+  flex: 1;
+  padding: 20px;
+  border : 1px solid #b31616;
+}
