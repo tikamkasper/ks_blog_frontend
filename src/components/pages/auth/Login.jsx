@@ -19,9 +19,9 @@ const Login = () => {
       const user = await dispatch(loginUser({ email, password })).unwrap();
       toast.success("Login Successful.");
       if (user.role === "admin") {
-        navigate("/dashboard/admin");
+        navigate("/admin");
       } else if (user.role === "user") {
-        navigate("/dashboard/user");
+        navigate("/user");
       } else {
         navigate("/");
       }

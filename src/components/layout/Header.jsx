@@ -23,7 +23,7 @@ const Header = () => {
         </div>
         <div className={styles.login_logout}>
           {!isAuthenticated ? (
-            <Link to="/login">Login</Link> // ✅ Corrected login navigation
+            <Link to="/login">Login</Link>
           ) : (
             <Link to="#" onClick={handleLogout}>
               Logout

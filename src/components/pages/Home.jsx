@@ -4,6 +4,8 @@ import { fetchVerifiedBlogs } from "../../redux/thunks/blogThunks.js";
 import BlogCard from "../BlogCard.jsx";
 import Pagination from "../../components/Pagination.jsx";
 import styles from "./Home.module.css";
+import Footer from "../layout/Footer.jsx";
+import Header from "../layout/Header.jsx";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -25,22 +27,26 @@ const Home = () => {
     blogs?.data?.blogs.slice(indexOfFirstBlog, indexOfLastBlog) || [];
 
   return (
-    <div className={styles.homeContainer}>
-      <h1>All Verified Blogs</h1>
-      <div className={styles.homeBlogList}>
-        {currentBlogs.map((blog) => (
-          <BlogCard key={blog._id} blog={blog} />
-        ))}
-      </div>
+    <>
+      <Header />
+      <div className={styles.homeContainer}>
+        <h1>All Verified Blogs</h1>
+        <div className={styles.homeBlogList}>
+          {currentBlogs.map((blog) => (
+            <BlogCard key={blog._id} blog={blog} />
+          ))}
+        </div>
 
-      {/* Pagination Component */}
-      <Pagination
-        totalBlogs={blogs?.data?.blogs.length || 0}
-        blogsPerPage={blogsPerPage}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
-    </div>
+        {/* Pagination Component */}
+        <Pagination
+          totalBlogs={blogs?.data?.blogs.length || 0}
+          blogsPerPage={blogsPerPage}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+      </div>
+      <Footer />
+    </>
   );
 };
 
