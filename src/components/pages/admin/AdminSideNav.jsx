@@ -64,10 +64,7 @@ const SideNav = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/admin/account"
-            className={({ isActive }) => (isActive ? `${styles.link_bg}` : "")}
-          >
+          <NavLink to="#">
             <IoMdSettings /> {isExpanded && "Settings"}
           </NavLink>
         </li>

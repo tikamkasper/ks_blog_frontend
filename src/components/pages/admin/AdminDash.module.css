@@ -1,0 +1,88 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.subContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 20px;
+  border: 2px solid gray;
+  border-radius: 10px;
+  background: #bfc9ca;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background: #b9c6c7;
+  }
+}
+
+.subContainer2 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  gap: 20px;
+}
+
+.newUsers {
+  border: 2px solid gray;
+  border-radius: 10px;
+}
+
+.recentBlogs {
+  border: 2px solid gray;
+  border-radius: 10px;
+}
+
+.table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table td,
+.table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table tr:hover {
+  background-color: #ddd;
+}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background: #bfc9ca;
+  color: white;
+}
+
+caption {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.user_name_td {
+  display: flex;
+}

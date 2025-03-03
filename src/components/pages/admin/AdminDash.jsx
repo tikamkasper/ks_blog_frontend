@@ -1,154 +1,98 @@
 import React from "react";
-import "./style.css";
-
+import styles from "./AdminDash.module.css";
+import user from "../../../assets/user.png";
 const AdminDashboard = () => {
   return (
-    <main>
-      <div className="head-title">
-        <div className="left">
-          <h1>Dashboard</h1>
-          <ul className="breadcrumb">
-            <li>
-              <a href="#">Dashboard</a>
-            </li>
-            <li>
-              <i className="bx bx-chevron-right" />
-            </li>
-            <li>
-              <a className="active" href="#">
-                Home
-              </a>
-            </li>
-          </ul>
-        </div>
-        <a href="#" className="btn-download">
-          <i className="bx bxs-cloud-download" />
-          <span className="text">Download PDF</span>
-        </a>
-      </div>
-      <ul className="box-info">
-        <li>
-          <i className="bx bxs-calendar-check" />
-          <span className="text">
-            <h3>1020</h3>
-            <p>New Order</p>
-          </span>
-        </li>
-        <li>
-          <i className="bx bxs-group" />
-          <span className="text">
-            <h3>2834</h3>
-            <p>Visitors</p>
-          </span>
-        </li>
-        <li>
-          <i className="bx bxs-dollar-circle" />
-          <span className="text">
-            <h3>$2543</h3>
-            <p>Total Sales</p>
-          </span>
-        </li>
-      </ul>
-      <div className="table-data">
-        <div className="order">
-          <div className="head">
-            <h3>Recent Orders</h3>
-            <i className="bx bx-search" />
-            <i className="bx bx-filter" />
+    <>
+      <div className={styles.container}>
+        <h1 style={{ marginLeft: "5px" }}>Admin Dashboard</h1>
+        <div className={styles.subContainer}>
+          <div className={styles.card}>
+            <h2>201</h2>
+            <p>Total Users</p>
           </div>
-          <table>
-            <thead>
-              <tr>
-                <th>User</th>
-                <th>Date Order</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <img src="img/people.png" />
-                  <p>John Doe</p>
-                </td>
-                <td>01-10-2021</td>
-                <td>
-                  <span className="status completed">Completed</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img src="img/people.png" />
-                  <p>John Doe</p>
-                </td>
-                <td>01-10-2021</td>
-                <td>
-                  <span className="status pending">Pending</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img src="img/people.png" />
-                  <p>John Doe</p>
-                </td>
-                <td>01-10-2021</td>
-                <td>
-                  <span className="status process">Process</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img src="img/people.png" />
-                  <p>John Doe</p>
-                </td>
-                <td>01-10-2021</td>
-                <td>
-                  <span className="status pending">Pending</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img src="img/people.png" />
-                  <p>John Doe</p>
-                </td>
-                <td>01-10-2021</td>
-                <td>
-                  <span className="status completed">Completed</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div className="todo">
-          <div className="head">
-            <h3>Todos</h3>
-            <i className="bx bx-plus" />
-            <i className="bx bx-filter" />
+          <div className={styles.card}>
+            <h2>201</h2>
+            <p>Total Gusts</p>
           </div>
-          <ul className="todo-list">
-            <li className="completed">
-              <p>Todo List</p>
-              <i className="bx bx-dots-vertical-rounded" />
-            </li>
-            <li className="completed">
-              <p>Todo List</p>
-              <i className="bx bx-dots-vertical-rounded" />
-            </li>
-            <li className="not-completed">
-              <p>Todo List</p>
-              <i className="bx bx-dots-vertical-rounded" />
-            </li>
-            <li className="completed">
-              <p>Todo List</p>
-              <i className="bx bx-dots-vertical-rounded" />
-            </li>
-            <li className="not-completed">
-              <p>Todo List</p>
-              <i className="bx bx-dots-vertical-rounded" />
-            </li>
-          </ul>
+          <div className={styles.card}>
+            <h2>300</h2>
+            <p>Total Blogs</p>
+          </div>
+          <div className={styles.card}>
+            <h2>250</h2>
+            <p>Total Verified Blogs</p>
+          </div>
+        </div>
+        <div className={styles.subContainer2}>
+          <div className={styles.newUsers}>
+            <table className={styles.table}>
+              <caption>New Users</caption>
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Registration Date</th>
+                  <th>Role</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className={styles.user_name_td}>
+                    <img
+                      src={user}
+                      alt="user img"
+                      width={"20px"}
+                      height={"20px"}
+                      style={{ borderRadius: "50%" }}
+                    />{" "}
+                    &nbsp;
+                    <span>Aman Thakur</span>
+                  </td>
+                  <td>Wed Feb 26 2025 15:35:20</td>
+                  <td>User</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className={styles.recentBlogs}>
+            <table className={styles.table}>
+              <caption>Resent Blogs</caption>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Category</th>
+                  <th>Created By</th>
+                  <th>Creation Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>My Sql</td>
+                  <td>
+                    MySQL is an open-source relational database management
+                    system.
+                  </td>
+                  <td>DBMS</td>
+                  <td className={styles.user_name_td}>
+                    <img
+                      src={user}
+                      alt="user img"
+                      width={"20px"}
+                      height={"20px"}
+                      style={{ borderRadius: "50%" }}
+                    />{" "}
+                    &nbsp;
+                    <span>Aman Thakur</span>
+                  </td>
+                  <td>Wed Feb 26 2025 15:35:20</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </main>
+    </>
   );
 };
 
