@@ -3,10 +3,10 @@ import { LOADING } from "../constants.js";
 import { loginUser, logoutUser, getUser } from "../thunks/authThunks.js";
 
 const initialState = {
-  loading: LOADING.IDLE,
   user: null,
-  error: null,
+  loading: LOADING.IDLE,
   isAuthenticated: false,
+  error: null,
 };
 
 const authSlice = createSlice({
