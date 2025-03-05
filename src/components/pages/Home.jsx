@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchVerifiedBlogs } from "../../redux/thunks/blogThunks.js";
+import { fetchVerifiedBlogs } from "../../redux/thunks/blogThunk.js";
 import BlogCard from "../BlogCard.jsx";
 import Pagination from "../../components/Pagination.jsx";
 import styles from "./Home.module.css";
@@ -10,11 +10,12 @@ import Header from "../layout/Header.jsx";
 const Home = () => {
   const dispatch = useDispatch();
 
-  const { loading, blogs, error } = useSelector((state) => state.verifiedBlogs);
-
   // Pagination States
   const [currentPage, setCurrentPage] = useState(1);
-  const blogsPerPage = 10;
+  const blogsPerPage = 12;
+
+  const { success, message, verifiedBlogsCount, loading, error, data } =
+    useSelector((state) => state.blogs);
 
   useEffect(() => {
     dispatch(fetchVerifiedBlogs());
@@ -24,13 +25,13 @@ const Home = () => {
   const indexOfLastBlog = currentPage * blogsPerPage;
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
   const currentBlogs =
-    blogs?.data?.blogs.slice(indexOfFirstBlog, indexOfLastBlog) || [];
+    data?.verifiedBlogs?.slice(indexOfFirstBlog, indexOfLastBlog) || [];
 
   return (
     <>
       <Header />
       <div className={styles.homeContainer}>
-        <h1>All Verified Blogs</h1>
+        <h1 style={{ textAlign: "center" }}>All Blogs</h1>
         <div className={styles.homeBlogList}>
           {currentBlogs.map((blog) => (
             <BlogCard key={blog._id} blog={blog} />
@@ -39,7 +40,7 @@ const Home = () => {
 
         {/* Pagination Component */}
         <Pagination
-          totalBlogs={blogs?.data?.blogs.length || 0}
+          totalBlogs={data?.verifiedBlogs?.length || 0}
           blogsPerPage={blogsPerPage}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}

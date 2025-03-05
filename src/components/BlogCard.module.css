@@ -1,5 +1,7 @@
 .blogCard {
+  width: 250px;
   display: flex;
+  flex-direction: column;
   gap: 20px;
   padding: 20px;
   border: 2px solid gray;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
-import { loginUser } from "../../../redux/thunks/authThunks";
+import { loginUser } from "../../../redux/thunks/authThunk";
 import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import Eye Icons
 import styles from "./Login.module.css";

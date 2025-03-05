@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Header.module.css";
 import { Link, useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { logoutUser } from "../../redux/thunks/authThunks.js";
+import { logoutUser } from "../../redux/thunks/authThunk.js";
 import Logo from "../../assets/kasper_logo.png";
 
 const Header = () => {

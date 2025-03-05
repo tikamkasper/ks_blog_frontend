@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { createUser } from "../../../redux/thunks/userThunks.js";
+import { createUser } from "../../../redux/thunks/userThunk.js";
 import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import styles from "./AdminUsersCreate.module.css";

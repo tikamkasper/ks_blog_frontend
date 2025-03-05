@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { LOADING } from "../constants.js";
-import { loginUser, logoutUser, getUser } from "../thunks/authThunks.js";
+import { loginUser, logoutUser, getUser } from "../thunks/authThunk.js";
 
 const initialState = {
   user: null,

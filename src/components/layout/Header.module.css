@@ -10,7 +10,7 @@
 }
 
 .subContainer {
-  width: 80%;
+  width: 85%;
   margin: auto;
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@
 }
 
 .ks_logo img {
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
   cursor: pointer;
 }
 
@@ -29,7 +29,7 @@
 
 .login_logout a {
   text-decoration: none;
-  background-color:#BFC9CA;
+  background-color: #bfc9ca;
   color: white;
   padding: 5px 8px;
   border-radius: 5px;
@@ -44,7 +44,7 @@
   top: 110%;
   left: 50%;
   transform: translateX(-50%);
-color: #4a4a4a;
+  color: #4a4a4a;
   font-size: 12px;
   white-space: nowrap;
   opacity: 0;

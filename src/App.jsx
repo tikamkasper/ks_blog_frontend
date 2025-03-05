@@ -8,7 +8,7 @@ import Home from "./components/pages/Home.jsx";
 import Login from "./components/pages/auth/Login.jsx";
 import UserDashLayout from "./components/pages/user/UserDashLayout.jsx";
 import AdminDashLayout from "./components/pages/admin/AdminDashLayout.jsx";
-import { getUser } from "./redux/thunks/authThunks.js";
+import { getUser } from "./redux/thunks/authThunk.js";
 import AdminDashboard from "./components/pages/admin/AdminDash.jsx";
 import UserDashboard from "./components/pages/user/UserDash.jsx";
 import UserProfile from "./components/pages/user/userProfile.jsx";
@@ -19,6 +19,7 @@ import UserBlogs from "./components/pages/user/UserBlogs.jsx";
 import AdminUsers from "./components/pages/admin/adminUsers.jsx";
 import AdminBlogs from "./components/pages/admin/adminBlogs.jsx";
 import AdminUsersCreate from "./components/pages/admin/AdminUsersCreate.jsx";
+import BlogDetail from "./components/pages/BlogDetail.jsx";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/blog/:id" element={<BlogDetail />} />
 
         {/* Nested Routing for Admin */}
         {isAuthenticated && user?.role === "admin" && (

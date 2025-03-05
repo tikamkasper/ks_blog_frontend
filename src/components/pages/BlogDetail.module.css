@@ -1,9 +1,36 @@
-.blogDetailContainer {
-  width: 80%;
+.container {
+  width: 85%;
   margin: auto;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 2px solid #ccc;
 }
-.blogDetailContent {
+.contentContainer {
   line-height: 1.6;
   font-size: 18px;
+  border: 2px solid #863636;
+}
+.image {
+  width: 150px;
+}
+.commentsListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 2px solid green;
+}
+.commentList {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 20px;
+  border: 2px solid rgb(179, 19, 165);
+}
+.listItem {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.commentFormContainer {
 }

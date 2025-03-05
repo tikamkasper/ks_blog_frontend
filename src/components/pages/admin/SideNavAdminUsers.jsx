@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router";
 import styles from "./SideNavAdminUsers.module.css";
-import { getAllUsers } from "../../../redux/thunks/userThunks";
+import { getAllUsers } from "../../../redux/thunks/userThunk.js";
 import { useDispatch } from "react-redux";
 
 const SideNavAdminUsers = () => {
